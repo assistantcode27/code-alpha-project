@@ -1,0 +1,687 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'poppins',sans-serif;
+        }
+        body{
+           background-color: navy;
+           
+        }
+        .header{
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            padding: 20px 10%;
+            background: transparent;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 100;
+        }
+        .logo{
+            position: relative;
+            font-size: 25px;
+            color: azure;
+            text-decoration: none;
+            font-weight: 600;
+        }
+        .navbar a{
+            display: inline-block;
+            font-size: 25px;
+            color: azure;
+            text-decoration: none;
+            font-weight: 500;
+            margin-left: 35px;
+            transition: .3s;
+        }
+        .navbar a:hover{
+            color: #0ef;
+        }
+        .home{
+            position: relative;
+            width: 100%;
+            justify-content: space-between;
+            height: 100vh;
+           color: azure;
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items:center;
+            padding: 70px;
+        }
+        .home-content{
+            max-width: 600px;
+        }
+        .home-content h3{
+            font-size: 32px;
+            font-weight: 1000;
+            margin-top: 50px;
+            margin-left: 10px;
+          
+        }
+        .home-content h1{
+            font-size: 46px;
+            font-weight: 700;
+            margin: -3x 0;
+            text-shadow: -1px 3px 5px;
+        }
+        .rightsection img{
+           width: 60%;
+           height: 20%;
+           margin-left:100px;
+           top: 40px;
+          
+        }
+        .btn-box{
+            display: inline-block;
+            padding: 12px 28px;
+            background: #0ef;
+            border-radius: 40px;
+            font-size:16px;
+            color: black;
+            letter-spacing: 1px;
+            text-decoration: none;
+            font-weight: 600;
+        }
+        .btn-box:hover{
+            box-shadow: 0 0 5px cyan
+            0 0 25px cyan ,0 0 50px cyan,
+            0 0 100px cyan, 0 0 200px cyan;
+           
+        }
+        #element{
+            color:aqua;
+            font-size: 40px;
+        }
+        .about{
+            display: grid;
+            grid-template-columns: repeat(2,1fr);
+            align-items: center;
+            gap: 1.5rem;
+        }
+        .about-img {
+            padding-bottom: 20%;
+            max-width: 630px;
+            height: auto;
+            width: 100%;
+            border-radius: 8px;
+        }
+        .about-text h3{
+            font-size: 60px;
+        }
+        .about-text h2 {
+           font-size: 60px;
+        }
+        .about-text h2 {
+            color: aqua;
+        }
+        .about-text h4{
+            font-size: 29px;
+            font-weight: 600;
+            color: aliceblue;
+            line-height: 1.7;
+            margin: 15px 0 30px;
+        }
+        .about-text p{
+            color: aliceblue;
+            font-size: 20px;
+            line-height: 1.4;
+            margin-bottom: 4rem;
+        }
+        #project{
+            color: aliceblue;
+            font-size: 20px;
+            line-height: 1.4;
+            margin-bottom: 4rem;
+        }
+        .sub-title{
+            text-align: center;
+            font-size: 60px;
+            padding-bottom: 70px;
+            
+        }
+        .sub-title span{
+            color: #0ef;
+        }
+        .container{
+            padding: 90;
+        }
+        .project-list{
+            display: grid;
+            grid-template-columns: repeat(auto-fit,minmax(259px,1fr));
+            grid-gap:40px;
+            margin-top: 50px;
+        }
+        .project-list div{
+            background-color: transparentw;
+            padding:40px ;
+            font-size:13px ;
+            font-weight:13px ;
+            border-right:10px ;
+            border-radius:20px ;
+            transition: background 0.5s,transform 0.5s;
+            box-shadow: 1px 1px 20px #405494f7;
+        }
+        .project-list div h1 {
+            font-size :30px;
+            font-weight:500;
+
+        }
+        .project-list div h2{
+            font-size :30p;
+            font-weight:500;
+            margin-bottom: 15px;
+
+        }
+        .service-list div a{
+            text-decoration: none;
+            color: #000000;
+            font-size: 12px;
+            margin-top: 20px;
+            display: inline-block;
+        }
+        .read{
+            display: inline-block;
+            padding: 12px 28px;
+            background: #0ef;
+            border-radius: 40px;
+            font-size: 16px;
+            color: #081b29;
+            letter-spacing: 1px;
+            text-decoration: none;
+            font-weight: 600;
+            opacity: 10;
+            animation: slidetop is ease forwards;
+            animation-delay: 2s;
+            box-shadow: 0 0 5px #0ef
+            0 0 25px #0ef;
+        }
+        .read:hover{
+            box-shadow: 0 0 5px cyan
+            0 0 25px cyan ,0 0 50px cyan,
+            0 0 100px cyan, 0 0 200px cyan;
+        }
+    
+
+        .services-list div:hover{
+            transform: translateY(-10px);
+           
+        }
+       
+        .container1{
+            width: 600px;
+            height: 500px;
+            padding: 75px 90px;
+            margin-left: 120px;
+        }
+        .heading1{
+            text-align: center;
+            text-decoration: underline;
+            text-underline-offset: 10px;
+            text-decoration-thickness: 5px;
+            margin-bottom: 50px;
+            color: aqua;
+        }
+        .bar{
+            font-size: 28px;
+            color:whitesmoke;
+        }
+        .technical-bars .bar{
+            margin-top: 40px 0;
+        }
+        .technical-bars .bar:last-child{
+            margin-bottom: 0;
+        }
+        .technical-bars .bar .info{
+            margin-bottom: 5px;
+        }
+        .technical-bars .bar .info span{
+            font-size: 25px;
+            font-weight: 500;
+        }
+        .technical-bars .bar .progress-line{
+            position: relative;
+            border-radius: 10px;
+            width: 100%;
+            height: 5px;
+            background-color: #000000;
+            animation: animate is cubic-bezier(1,0,0,5,1)forwards;
+            transform: scaleX(0);
+            transform-origin: left;
+        }
+        @keyframes animate{
+            100%{
+                transform: scaleX(1);
+            }
+        }
+        .technical-bars .bar .progress-line span{
+            height: 100%;
+            background-color: #0ef;
+            position: absolute;
+            border-radius: 10px;
+            animation:animate 1s 1s cubic-bezier(1,0,0,5,1) forwards ;
+            transform: scaleX(0);
+            transform-origin: left;
+        }
+        @keyframes slideRight{
+            0%{
+                transform:translateX(-100px);
+                opacity: 0;
+
+            }
+            100%{
+                transform: translateX(0px);
+                opacity: 1;
+            }
+        }
+        @keyframes slideleft{
+            0%{
+                transform:translateX(-100px);
+                opacity: 0;
+
+            }
+            100%{
+                transform: translateX(0px);
+                opacity: 1;
+            }
+        }
+        .progress-line .html span{
+            width: 90%;
+        }
+        .progress-line .css span{
+            width: 60%;
+        }
+        .progress-line .javascript span{
+            width: 85%;
+        }
+        .progress-line .python span{
+            width: 50%;
+        }
+        .progress-line .html span{
+            width: 75%;
+        }
+        .progress-line span::after{
+            position: absolute;
+            padding: 1px 8px;
+            background-color: #000;
+            color: #fff;
+            font-size: 12px;
+            border-radius: 3px;
+            top: -28px;
+            right: -20px;
+            animation: showtext 0.5s 1.5s linear forwards;
+            opacity: 0;
+        }
+        .progress-line .html span::after{
+            content: "90%";
+        }
+        .progress-line .css span::after{
+            content: "80%";
+        }
+        .progress-line .javascript span::after{
+            content: "60%";
+        }
+        .progress-line .react span::after{
+            content: "40%";
+        }
+        .progress-line span::before{
+            content: "";
+            position: absolute;
+            width: 0;
+            height: 0;
+            border: 7px solid transparent;
+            border-bottom-width: 0px;
+            border-right-width: 0px;
+            border-top-color:#000;
+           top: -10px;
+           right: 0;
+           animation: showText 0.5s 1.5s linear forwards;
+           opacity: 0;
+        }
+        @keyframes showText{
+            100%{
+                opacity: 1;
+            }
+        }
+        .contact1{
+            font-size: 20px;
+            margin-left:400px;
+            display: flex;
+            justify-content:space-evenly;
+            flex-direction: column;
+            width: 500px;
+            box-shadow: -3px 5px 20px #012290f7;
+            color: aqua;
+
+        }
+        .btn{
+            
+            padding: 12px 28px;
+            background: #0ef;
+            border-radius: 30px;
+            font-size: 16px;
+            
+            margin-left: 500px;
+            
+        }
+.bttn:hover {
+    background: #ffa500;
+}
+.certificate1{
+    margin-left: 50px;
+
+}
+.bttn{ 
+
+            padding: 10px 25px;
+            background: #0ef;
+            border-radius:25px;
+            font-size: 16px;
+            color: #081b29;
+            letter-spacing: 1px;
+            text-decoration: none;
+            font-weight: 400;
+            box-shadow: 0 0 5px #0ef
+            0 0 25px #0ef;
+            margin-left: 900px;
+
+}
+h3{
+    color: #fff;
+}
+#contact form {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 10px;
+    max-width: 600px;
+    margin: 0 auto;
+    animation: fadeIn 2s ease-in-out;
+}
+
+#contact form label {
+    text-align: left;
+}
+.button{
+    background-color: #ffa500;
+    text-align: center;
+}
+
+footer {
+    background: #333;
+    color: #fff;
+    text-align: center;
+    padding: 10px 0;
+    animation: fadeIn 2s ease-in-out;
+}
+
+
+          
+    </style>
+</head>
+<body>
+    <header class="header">
+        <a href="#" class="logo"> Arfiya portfolio</a>
+        <nav class="navbar">
+            <a href="#home">home</a>
+            <a href="#about">about</a>
+            <a href="#project">project</a>
+            <a href="#skills">skills</a>
+            <a href="#achievment certificate">certificate</a>
+            <a href="#contact">contact</a>
+        </nav>
+    </header>
+    <section class="home">
+        <div class="home-content">
+        <h3>Hello It's Me</h3>
+        <h1>Arfiya Ansari</h1>
+        <div>I'm a passionate </div>
+        <span id="element"></span>
+        <p> Frontend Web Developer with experience in creating visually appealing and user-friendly websites.<br>
+         </p>
+        </div>
+        <div class="rightsection">
+            <img src="developer.images.png" alt="">
+        </div>
+
+
+    </section>
+
+
+    <section class="about" id="about">
+        <div class="about-img">
+            <img src="arfi about.png" height="400px" width="600px"  >
+        </div>
+        <div class="about-text">
+            <h2>about<span> me</span></h2>
+            <h4>frontend developer</h4>
+            <p>I am a skilled web designer with  experiencde captivating website design and implement them thrown
+                Frontend Web Developer with experience in creating visually appealing and user-friendly websites.<br>
+                 Ambitious and driven individual with 2-3 internship experiences in [frontend development field]. <br>
+                 Progressing rapidly in my career, with a strong foundation in key skills html,css,javascript,bootstrap<br>
+                 and a desire to continue learning and growing.
+            </p>
+            <a href="https://drive.google.com/file/d/1_8nKofmhh1GTfH9up8DgS8liDJYArBhy/view?usp=drivesdk " class="btn-box">download resume</a>
+        </div>
+       
+    </section>
+    
+    
+   <section>
+      <div class="project" id="project">
+           <div class="container">
+                <h1 class="sub-title">my<span>projects</span></h1>
+                <div class="project-list">
+                   <div>
+                     <i class='expand-horizontal' color='#00ffff' ></i>
+                      <h2>calculator</h2>
+                      <p>To create a calculator using HTML, CSS, and Javascript, we need to have basic<br>
+                         understanding of working of HTML, CSS and JavaScript. Calculator is a simple tool<br>
+                          which performs basic arithmetic calculations like Addition, Subtraction, <br>
+                          Multiplication and Division. In this article, we are going to discuss how to<br>
+                           create a Calculator using HTML, CSS, and JavaScript. Usuallyand its products.”<br>
+                         definition tells us that, regardless of its medium plenty of non-digital<br>
+                         </p>
+                         <a href="https://drive.google.com/file/d/1YllydLminIr7JdA8qhFrP1PY9v11NTqi/view?usp=drivesdk " class="read">click</a>
+                   </div>
+
+                   <div>
+                    <i class='crop' color='#00ffff' ></i>
+                    <h2>login page</h2>
+                    <p>In this article, we will learn how to make responsive sliding login and registration <br>
+                        forms using HTML, CSS, and javascript. Forms are used on webpages for the user to enter<br>
+                         their required details that further send to the server for processing. A form is also <br>
+                         known as a web form or HTML form. In this article, you will learn to make a responsive <br>
+                         sliding login and registration form using HTML, CSS, and JavaScript. 
+                    </p>
+                       <a href="" class="read">click</a>
+                 </div>
+
+                 <div>
+                    <i class='crop' color='#00ffff' ></i>
+                    <h2>quiz game</h2>
+                    <p> This project is an interactive Quiz Game created using HTML, CSS, and JavaScript.
+                        The game presents a series of questions for the user to answer, tracking their score based on correct answers.
+                        HTML is used to structure the game's layout, displaying the questions, answer options, and score.
+                        CSS provides styling to make the game visually engaging, adding colors, fonts, and effects.
+                        JavaScript controls the game logic, such as loading questions, verifying answers, updating scores, and handling the game's flow.
+                      
+                    </p>
+                    <a href="tiktokzip.html" class="read">click</a>
+                      
+                 </div>
+
+
+                 <div>
+                    <i class='logo' color='#00ffff'></i>
+                    <h2>tic-tac-toe game</h2>
+                    <p>This project is a classic Tic-Tac-Toe game developed using HTML, CSS, and JavaScript.
+                        It allows two players to play the game in turns, aiming to align three of their symbols (either X or O) in a row, column, or diagonal.
+                        HTML builds the structure, displaying the 3x3 game grid and other elements.
+                        CSS styles the board and adds interactive effects, making the game visually appealing.
+                        JavaScript handles the game logic, tracking players moves, checking for a winner or a draw, and resetting the game board for new rounds.
+                     </p>
+                       <a href=""class="read">click</a>
+                 </div>
+
+                </div>
+           </div> 
+       </div>
+   </section>
+   <h1 class="sub-title">my <span>skill</span></h1>
+
+   <section>
+    <div class="container1" id="skills">
+        <h1 class="heading1">Technical skills</h1>
+        <div class="technical-bars">
+            <div class="bar">
+                <div class="info"><i style="color: #c95d2e" class='bx bxl-html5'></i>
+                    <span>HTML</span>
+                </div>
+                <div class="progress-line html">
+                    <span></span>
+                </div>
+           </div>
+
+           <div class="bar"><i style="color: #c95d2e" class='bx bxl-css3'></i>
+               <div class="info">
+                      <span>CSS</span>
+                </div>
+                <div class="progress-line css">
+                     <span></span>
+                </div>
+           </div>
+
+           <div class="bar"><i style="color: #c95d2e" class='bx bxl-javascript'></i>
+              <div class="info">
+                   <span>JavaScript</span>
+               </div>
+               <div class="progress-line javascript">
+                  <span></span>
+               </div>
+           </div>
+
+
+           <div class="bar">
+            <div class="info">
+                 <span>bootstrap</span>
+             </div>
+             <div class="progress-line bootstrap">
+                <span></span>
+             </div>
+         </div>
+         <div class="bar">
+            <div class="info">
+                 <span>React js</span>
+             </div>
+             <div class="progress-line bootstrap">
+                <span></span>
+             </div>
+         </div>
+
+         <div class="bar">
+            <div class="info">
+                 <span>Node js</span>
+             </div>
+             <div class="progress-line react">
+                <span></span>
+             </div>
+         </div>
+          
+         <div class="bar">
+            <div class="info">
+                 <span>MYSql</span>
+             </div>
+             <div class="progress-line bootstrap">
+                <span></span>
+             </div>
+         </div>
+       </div>
+    </div>
+
+    <h1 class="sub-title"> Achievement <span>certificate</span></h1>
+
+    <section id="certificate">
+       
+        <div class="certificate1">
+            <h3>Html,css,javascript </h3>
+            <p>web development course from coursera </p>
+            <a href="coursera.jpg " class="bttn">View certificate
+            </a>
+        </div>
+        <div class="certificate1">
+            <h3>javascript course</h3>
+            <p>from simplilearn skillup platform</p>
+            <a href="simplelearn.jpg" class="bttn">View certificate</a>
+        </div>
+
+        <div class="certificate1">
+            <h3>Development & advanced engineering job simulation</h3>
+            <p>from forage accenture</p>
+            <a href="forage.jpg " class="bttn">View certificate</a>
+        </div>
+
+        <div class="certificate1">
+            <h3>web development course</h3>
+            <p> from udemy platform</p>
+            <a href=" udemy.jpg" class="bttn">View certificate</a>
+        </div>
+        <div class="certificate1">
+            <h3>Frontend development</h3>
+            <p> Internship certificate from technohack</p>
+            <a href="technohack.jpg " class="bttn">View certificate</a>
+        </div>
+        <div class="certificate1">
+            <h3>web content creation</h3>
+            <p>I did one month internship from internshala.</p>
+            <a href="pretest.jpg " class="bttn">View certificate</a>
+        </div>
+    </section>
+   
+
+    
+
+    <section id="contact">
+        <h1 class="sub-title"><span>CONTACT</span></h1>
+       
+        <form action="#" method="post">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required placeholder="name">
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required placeholder="email">
+
+            <label for="message">Message:</label>
+            <textarea id="message" name="message" required placeholder="message"></textarea>
+
+            <button type="submit" class="button">Send Message</button>
+        </form>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Arfiya Ansari. All rights reserved.</p>
+    </footer>
+
+
+
+    <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+<script>
+
+var typed = new Typed('#element', {
+  strings: ['<i>web</i> development.', '&amp;graphic design.','web design.','frontend development..'],
+  typeSpeed: 50,
+});
+</script>
+
+</body>
+</html>
